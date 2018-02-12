@@ -3,6 +3,9 @@ execute pathogen#infect()
 inoremap <C-Space> <C-x><C-u>
 inoremap <C-@> <C-Space>
 
+" disable auto-indentation when pasting using ctrl+shift+v in insert mode
+set paste
+
 " YouCompleteMe configuration
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 filetype on
