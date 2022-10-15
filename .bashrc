@@ -20,3 +20,12 @@ function sayit {
   aplay /tmp/test.wav
   rm /tmp/test.wav
 }
+
+function dockerrun {
+  sudo docker run \
+    -it --rm \
+    --mount "src=$PWD,target=$PWD,type=bind" \
+    --mount "src=/etc/passwd,target=/etc/passwd,type=bind" \
+    -w "$PWD" --user "${UID}:$(id -g)" \
+    "$@"
+}
