@@ -35,7 +35,7 @@ function profound() {
     -nrIHZ \
     --line-buffered \
     --group-separator="$(for i in $(seq 1 $(tput cols)); do printf -; done)"  \
-    -B10 -A10 \
+    -B5 -A5 \
     --color=always \
     --exclude-dir=.git "$@" . \
       | sed -Eu 's/^.*\x0[^:]+-//g' \
